@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body,div,ul,li,a,h1,h2,h3,h4 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    --bg-color: color-mix(in srgb, #f72 70%, #fff);
+    --sidebar-color: #fff;
+    --dark-color: #f62;
+    --text-color: #444;
+    background-color: var(--bg-color);
+    font-family: Montserrat;
+}
+
+label, .sidebar__nav {
+    user-select: none;
+}
+
+.sidebar {
+    position: fixed;
+    background-color: var(--sidebar-color);
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: clamp(200px, 20dvw, 300px);
+    padding: 30px 0 30px 6px;
+    position: relative;
+}
+
+.sidebar__form {
+    position: absolute;
+    right: -11px;
+}
+
+.sidebar__form label span{
+    background-color: var(--bg-color);
+    font-size: 2rem;
+    padding: 5px;
+    border-radius: 50%;
+    color: var(--sidebar-color);
+}
+
+.sidebar__form label span::before,
+.sidebar__form label span::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    position: absolute;
+}
+
+.sidebar__form label span::before{
+    bottom: 41px;
+    right: 11px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 4px 4px 0 4px var(--bg-color);
+}
+
+.sidebar__form label span::after{
+    top: 41px;
+    right: 11px;
+    border-top-right-radius: 30px;
+    box-shadow: 4px -4px 0 4px var(--bg-color);
+}
+
+input[type="checkbox"]:checked ~ label span{
+    background-color: var(--sidebar-color);
+    color: var(--bg-color);
+}
+
+
+input[type="checkbox"]:checked ~ label span::before,
+input[type="checkbox"]:checked ~ label span::after{
+    display: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.sidebar:has(input[type="checkbox"]:checked){
+    width: fit-content;
+}
+
+.sidebar:has(input[type="checkbox"]:checked) .sidebar__picture {
+    width: 3rem;
+}
+
+.sidebar:has(input[type="checkbox"]:checked) :is(.sidebar__item a, .sidebar__item--profile span) {
+    display: none;
+}
+
+.sidebar:has(input[type="checkbox"]:checked) .sidebar__item--profile {
+    padding: 0;
+    background-color: transparent;
+}
+
+.sidebar:has(input[type="checkbox"]:checked) .sidebar__form {
+    right: -16px;
+    top: 80px;
+}
+
+.sidebar__arrow {
+    display: none;
+}
+
+.sidebar:has(input[type="checkbox"]:checked) .sidebar__close {
+    display: none;
+}
+
+.sidebar:has(input[type="checkbox"]:checked) .sidebar__arrow {
+    display: block;
+}
+
+.sidebar__picture {
+    width: 120px;
+    align-self: center;
+    position: relative;
+}
+
+.sidebar__picture img {
+    max-width: 100%;
+    rotate: 180deg;
+}
+
+.sidebar__nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sidebar__item {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: .9rem;
+    padding-right: 6px;
+    color: var(--dark-color);
+    position: relative;
+}
+
+.sidebar__item:hover {
+    background-color: var(--bg-color);
+    border-radius: 30px 0  0 30px;
+    color: var(--sidebar-color);
+}
+
+.sidebar__item:hover::before,
+.sidebar__item:hover::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    right: 0;
+}
+
+.sidebar__item:hover::before {
+    top: -16px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 4px 4px 0 4px var(--bg-color);
+}
+
+.sidebar__item:hover::after {
+    bottom: -18px;
+    border-top-right-radius: 25px;
+    box-shadow: 4px -4px 0 4px var(--bg-color);
+}
+
+.material-symbols-outlined {
+    padding: 10px;
+    font-size: 2rem;
+}
+
+.sidebar__item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* SIDEBAR PROFILE */
+
+.sidebar__item--profile {
+    margin-left: 9px;
+    margin-bottom: 10px;
+}
+
+.sidebar__item--profile:hover img {
+    opacity: 0.84;
+}
+
+.sidebar__item img{
+    width: 35px;
+    clip-path: circle(50%);
+}
+
+.sidebar__profile--text {
+    font-size: .8rem;
+    color: var(--text-color);
+    padding: 8px;
+}
+
+.sidebar__profile .sidebar__item--profile:hover {
+    width: fit-content;
+    border-radius: 22px;
+}
+
+.sidebar__profile .sidebar__item--profile::after,
+.sidebar__profile .sidebar__item--profile::before {
+    display: none;
+}

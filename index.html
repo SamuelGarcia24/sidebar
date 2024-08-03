@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+    <aside class="sidebar">
+        <form class="sidebar__form">
+            <input type="checkbox" id="check">
+            <label class="sidebar__close" for="check"><span class="material-symbols-outlined">close</span></label>
+            <label class="sidebar__arrow" for="check"><span class="material-symbols-outlined">double_arrow</span></label>
+        </form>
+        <picture class="sidebar__picture">
+            <source srcset="img/logo-small.png" media="(max-width:57.5rem)">
+            <img src="img/logo.png" alt="logo de pinterest">
+        </picture>
+        <nav class="sidebar__nav">
+            <ul>
+                <li class="sidebar__item">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <a href="#">Notifications</a>
+                </li>
+                <li class="sidebar__item">
+                    <span class="material-symbols-outlined">message</span>
+                    <a href="#">Messages</a>
+                </li>
+                <li class="sidebar__item">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    <a href="#">Shipping Cart</a>
+                </li>
+                <li class="sidebar__item">
+                    <span class="material-symbols-outlined">account_balance</span>
+                    <a href="#">Account Balance</a>
+                </li>
+                <li class="sidebar__item">
+                    <span class="material-symbols-outlined">settings</span>
+                    <a href="#">Settings</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="sidebar__profile">
+            <ul>
+                <li class="sidebar__item sidebar__item--profile">
+                    <img src="img/profile.png" alt="your photo">
+                    <span class="sidebar__profile--text">PROFILE</span>
+                </li>
+                <li class="sidebar__item">
+                    <span class="material-symbols-outlined">logout</span>
+                    <a href="#">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+</body>
+</html>
